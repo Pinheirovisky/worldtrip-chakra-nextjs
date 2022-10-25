@@ -1,4 +1,4 @@
-import { Box, Divider, Text } from "@chakra-ui/react";
+import { Box, Center, Divider, Text } from "@chakra-ui/react";
 import { Banner } from "../components/Banner";
 import { Header } from "../components/Header";
 import { Swiper } from "../components/Swiper";
@@ -11,12 +11,16 @@ export default function Home() {
       <Banner />
       <TravelTypes />
       <Box display="flex" justifyContent="center">
-        <Divider w="3.75rem" borderColor="blackAlpha.600" borderWidth="1px" />
+        <Divider
+          w={{ base: "3.75rem", xl: "5.625rem" }}
+          borderColor="blackAlpha.600"
+          borderWidth="1px"
+        />
       </Box>
-      <Box py="1.5rem">
+      <Box py={{ base: "1.5rem", xl: "3.25rem" }}>
         <Text
           textAlign="center"
-          fontSize="xl"
+          fontSize={{ base: "1.25rem", xl: "2.25rem" }}
           fontWeight="500"
           color="gray.600"
         >
@@ -24,14 +28,16 @@ export default function Home() {
         </Text>
         <Text
           textAlign="center"
-          fontSize="xl"
+          fontSize={{ base: "1.25rem", xl: "2.25rem" }}
           fontWeight="500"
           color="gray.600"
         >
           Então escolha seu continente
         </Text>
       </Box>
-      <Swiper />
+      <Center>
+        <Swiper />
+      </Center>
     </Box>
   );
 }

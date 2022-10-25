@@ -48,7 +48,7 @@ const swiperImgs = [
 
 export const Swiper = () => {
   return (
-    <Box>
+    <Box w="100%" maxW="77.5rem">
       <SwiperLib
         slidesPerView={1}
         spaceBetween={30}
@@ -62,19 +62,21 @@ export const Swiper = () => {
         {swiperImgs.map((image) => (
           <SwiperSlide key={image.id}>
             <Center
-              w="100vw"
-              px="1rem"
-              py="1.75rem"
-              backgroundImage={`url(${image.img}&w=375&q=80)`}
+              backgroundImage={{
+                base: `url(${image.img}&w=375&q=80)`,
+                sm: `url(${image.img}&w=768&q=80)`,
+                lg: `url(${image.img}&w=1024&q=80)`,
+                xl: `url(${image.img}&w=1240&q=80)`,
+              }}
               backgroundPosition="center"
               backgroundRepeat="no-repeat"
               backgroundSize="cover"
-              minH="15.625rem"
+              minH={{ base: "15.625rem", lg: "28.125rem" }}
               flexDir="column"
             >
               <Text
                 textAlign="center"
-                fontSize="1.5rem"
+                fontSize={{ base: "1.5rem", xl: "3rem" }}
                 color="white"
                 fontWeight="700"
               >
@@ -82,7 +84,7 @@ export const Swiper = () => {
               </Text>
               <Text
                 textAlign="center"
-                fontSize="0.875rem"
+                fontSize={{ base: "0.875rem", xl: "1.5rem" }}
                 mt="0.75rem"
                 color="white"
                 fontWeight="700"

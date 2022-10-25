@@ -6,7 +6,7 @@ export const Header = () => {
     <Flex
       bg="white"
       w="100%"
-      h="3.125rem"
+      h={{ base: "3.125rem", xl: "6.25rem" }}
       align="center"
       justifyContent="center"
     >
